@@ -6,6 +6,7 @@ A simple Model Context Protocol (MCP) server that provides PDF reading capabilit
 
 - **extract_text**: Extract all text content from PDF files
 - **get_pdf_info**: Get basic PDF information (page count, metadata, dimensions)
+- **extract_tables**: Extract tables from PDF files
 
 ## Installation
 
@@ -59,6 +60,18 @@ Gets basic information about a PDF file.
   - `page_count`: Number of pages
   - `metadata`: PDF metadata (if available)
   - `page_dimensions`: Width and height of the first page
+
+### extract_tables
+Extracts tables from a PDF file.
+
+**Parameters:**
+- `file_path` (string): Path to the PDF file
+- `page_number` (integer, optional): Specific page number to extract from (1-indexed)
+
+**Returns:**
+- List of tables with:
+  - `page`: Page number where the table was found
+  - `data`: Table data as a list of rows (each row is a list of cell values)
 
 ## Integration with Claude Desktop
 
